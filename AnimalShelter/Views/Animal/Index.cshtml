@@ -7,10 +7,24 @@
 
 <h1>Animals</h1>
 
+@Html.ActionLink("Sort by Name", "Index", new { orderVar = ViewBag.NameSortParm })
+@Html.ActionLink("Sort by Age", "Index", new { orderVar = ViewBag.AgeSortParm })
+@Html.ActionLink("Sort by Type", "Index", new { orderVar = ViewBag.TypeSortParm })
+
+<!-- <form action="/Animal" method="post">
+  <label>Sort By:</label>
+  <select>
+    <option value="ViewBag.NameSortParm">Name</option>
+    <option value="ViewBag.TypeSortParm">Type</option>
+    <option value="ViewBag.AgeSortParm">Age</option>
+  </select>
+  <button class="btn" type="submit">Submit</button>
+</form> -->
+
 <ul>
   @foreach(Animal animal in Model)
   {
-      <li>@Html.ActionLink($"{animal.Name}", "Details", new { id = animal.AnimalId })</li>
+      <li>@Html.ActionLink($"{animal.Name}, {animal.PetType}", "Details", new { id = animal.AnimalId })</li>
   }
 </ul>
 
