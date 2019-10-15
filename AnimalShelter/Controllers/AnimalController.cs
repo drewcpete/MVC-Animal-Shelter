@@ -24,7 +24,7 @@ namespace AnimalShelter.Controllers
         {
             return View();
         }
-        
+
         [HttpPost]
         public ActionResult Create(Animal animal)
         {
