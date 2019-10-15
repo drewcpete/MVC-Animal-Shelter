@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
 using AnimalShelter.Models;
 
 namespace AnimalShelter
@@ -31,6 +31,8 @@ namespace AnimalShelter
 
         public void Configure(IApplicationBuilder app)
         {
+            app.UseStaticFiles();
+
             app.UseDeveloperExceptionPage();
 
             app.UseMvc(routes =>
@@ -44,7 +46,6 @@ namespace AnimalShelter
             {
                 await context.Response.WriteAsync("Something went wrong!");
             });
-
         }
     }
 }

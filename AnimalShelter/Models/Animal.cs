@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using MySql.Data.MySqlClient;
-
 namespace AnimalShelter.Models
 {
     public class Animal
@@ -11,5 +8,6 @@ namespace AnimalShelter.Models
         public int AdmittanceDate { get; set; }
         public string Type { get; set; }
         public string Breed { get; set; }
+
     }
 }
